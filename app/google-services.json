@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "910534008826",
+    "project_id": "foro-pancho",
+    "storage_bucket": "foro-pancho.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910534008826:android:478e4d720c7c53649b8e43",
+        "android_client_info": {
+          "package_name": "com.example.foropancho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910534008826-9cta5hdh5ldvdhcv4e9qp7qr39724vfe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ4wzHhepkoDlblWF3AHRtkJobBTn4Ez4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910534008826-9cta5hdh5ldvdhcv4e9qp7qr39724vfe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
