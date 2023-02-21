@@ -1,22 +1,22 @@
 package com.example.foropancho.model;
 
 public class Tipos {
-    String Titulo, Descripcion;
+    String Tipo, Descripcion;
 
     @Override
     public String toString() {
         return "Tipos{" +
-                "Titulo='" + Titulo + '\'' +
+                "Tipo='" + Tipo + '\'' +
                 ", Descripcion='" + Descripcion + '\'' +
                 '}';
     }
 
-    public String getTitulo() {
-        return Titulo;
+    public String getTipo() {
+        return Tipo;
     }
 
-    public void setTitulo(String titulo) {
-        Titulo = titulo;
+    public void setTipo(String tipo) {
+        Tipo = tipo;
     }
 
     public String getDescripcion() {
@@ -27,8 +27,8 @@ public class Tipos {
         Descripcion = descripcion;
     }
 
-    public Tipos(String titulo, String descripcion) {
-        Titulo = titulo;
+    public Tipos(String tipo, String descripcion) {
+        Tipo = tipo;
         Descripcion = descripcion;
     }
 

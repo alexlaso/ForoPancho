@@ -26,9 +26,9 @@ public class AdapterTipos extends FirestoreRecyclerAdapter<Tipos, AdapterTipos.V
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull AdapterTipos.ViewHolder holder, int position, @NonNull Tipos model) {
-        holder.Titulo.setText(model.getTitulo());
-        holder.Descripcion.setText(model.getDescripcion());
+    protected void onBindViewHolder(@NonNull AdapterTipos.ViewHolder holder, int position, @NonNull Tipos tipos) {
+        holder.Tipo.setText(tipos.getTipo());
+        holder.Descripcion.setText(tipos.getDescripcion());
     }
 
     @NonNull
@@ -39,11 +39,11 @@ public class AdapterTipos extends FirestoreRecyclerAdapter<Tipos, AdapterTipos.V
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView Titulo, Descripcion;
+        TextView Tipo, Descripcion;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            Titulo = itemView.findViewById(R.id.textViewTipo);
+            Tipo = itemView.findViewById(R.id.textViewTipo);
             Descripcion = itemView.findViewById(R.id.textViewDescTipo);
         }
     }
