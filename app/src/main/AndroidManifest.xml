@@ -32,5 +32,8 @@
             android:name=".ListaTipos"
             android:label="@string/app_name">
         </activity>
+        <activity android:name=".ListaPosts"
+            android:label="@string/app_name">
+        </activity>
     </application>
 </manifest>

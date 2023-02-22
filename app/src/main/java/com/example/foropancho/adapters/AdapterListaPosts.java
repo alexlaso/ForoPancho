@@ -9,37 +9,37 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foropancho.R;
-import com.example.foropancho.model.Tipos;
+import com.example.foropancho.model.Post;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 
-public class AdapterTipos extends FirestoreRecyclerAdapter<Tipos, AdapterTipos.ViewHolder> {
-    private OnItemClickListener onItemClickListener;
-    public AdapterTipos(@NonNull FirestoreRecyclerOptions<Tipos> options) {
-        super(options);
-    }
+public class AdapterListaPosts extends FirestoreRecyclerAdapter<Post, AdapterListaPosts.ViewHolder> {
+    private AdapterTipos.OnItemClickListener onItemClickListener;
+
+    public AdapterListaPosts(@NonNull FirestoreRecyclerOptions<Post> options){super(options);}
 
     @Override
-    protected void onBindViewHolder(@NonNull AdapterTipos.ViewHolder holder, int position, @NonNull Tipos tipos) {
-        holder.Tipo.setText(tipos.getTipo());
-        holder.Descripcion.setText(tipos.getDescripcion());
+    public void onBindViewHolder(@NonNull AdapterListaPosts.ViewHolder holder, int position, @NonNull Post post) {
+        holder.titulo.setText(post.getTituloPost());
+        holder.autor.setText(post.getCreador());
+        holder.desc.setText(post.getDescripcion());
     }
 
     @NonNull
     @Override
-    public AdapterTipos.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.tipos, parent, false);
+    public AdapterListaPosts.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.post,parent, false);
         return new ViewHolder(v);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView Tipo, Descripcion;
-
+        TextView titulo, autor, desc;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            Tipo = itemView.findViewById(R.id.textViewTipo);
-            Descripcion = itemView.findViewById(R.id.textViewDescTipo);
+            titulo = itemView.findViewById(R.id.textViewTitulo);
+            autor = itemView.findViewById(R.id.textViewAutor);
+            desc = itemView.findViewById(R.id.textViewDesc);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -57,7 +57,7 @@ public class AdapterTipos extends FirestoreRecyclerAdapter<Tipos, AdapterTipos.V
         void onItemClick(DocumentSnapshot documentSnapshot, int position);
     }
 
-    public void setOnItemClickListener(OnItemClickListener listener){
+    public void setOnItemClickListener(AdapterTipos.OnItemClickListener listener){
         this.onItemClickListener=listener;
     }
 }
