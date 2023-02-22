@@ -35,8 +35,6 @@ public class Register_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!editTextCorreo.getText().toString().isEmpty() && !editTextPW.getText().toString().isEmpty()/* && !editTextNombre.getText().toString().isEmpty() && !editTextNick.getText().toString().isEmpty()*/){
-                    System.out.println(editTextCorreo.getText().toString());
-                    System.out.println(editTextPW.getText().toString());
                     registrarUser(editTextCorreo.getText().toString(),editTextPW.getText().toString());
                     //subirDatosUser(editTextNombre.getText().toString(),editTextNick.getText().toString());
                 }else{
@@ -53,6 +51,7 @@ public class Register_Activity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(Register_Activity.this, "Usuario registrado correctamente",Toast.LENGTH_SHORT).show();
+                    return;
                 }else{
                     Toast.makeText(Register_Activity.this,"Error en el registro",Toast.LENGTH_SHORT).show();
                 }
