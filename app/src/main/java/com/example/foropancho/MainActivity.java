@@ -34,6 +34,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        switchDark = findViewById(R.id.switchDark);
+
+        switchDark.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+            }
+        });
+
         buttonRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
